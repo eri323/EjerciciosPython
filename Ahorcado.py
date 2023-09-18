@@ -1,8 +1,3 @@
-""" Palabra = input("Agregue una palabra: ")
-EquivocacionesPermitidas = int(input("Equivocaciones permitidas: "))
-Equivocaciones= 0
-
-Palabras = ["perro","chamo"] """
 
 
 
@@ -53,21 +48,12 @@ def dibujar_ahorcado(max_intentos):
         "_|___"
     ]
     
-    # Lista de partes del ahorcado a agregar según los max_intentos
-   
 
-    # Agregar partes adicionales según los max_intentos
-    for i in range(max_intentos):
-        partes_ahorcado[4]
 
-    # Imprimir el ahorcado
     for linea in partes_ahorcado:
         print(linea)
     
-    
 
-# Ejemplo de uso:
- # Cambia el número de intentos según sea necesario
 
 def adivinar_letra():
     global intentos

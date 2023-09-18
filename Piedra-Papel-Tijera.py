@@ -46,30 +46,58 @@ opciones = ["a", "b", "c"]
 def respuestaAleatoria():
     return random.choice(opciones)
 
+oportunidades = int(input("¿Cuántas veces desea jugar?: "))
+ganadasmias = 0
+ganadasmaquina = 0
+contador = 0
+
+
+
 def Elije():
+    global contador, ganadasmias, ganadasmaquina
     while True:
-        
         respuesta = input("Elije una opción (a, b, c): ")
         respuesta_aleatoria = respuestaAleatoria()
-
+    
         print(f"Tu elección: {respuesta}")
         print(f"Elección aleatoria: {respuesta_aleatoria}")
 
         if respuesta == respuesta_aleatoria:
             print("Empate")
+            contador += 1
         elif respuesta == "b" and respuesta_aleatoria == "c":
             print("Ganaste")
-            break
+            contador += 1
+            ganadasmias += 1
         elif respuesta == "c" and respuesta_aleatoria == "a":
             print("Ganaste")
-            break
+            contador += 1
+            ganadasmias += 1
         elif respuesta == "a" and respuesta_aleatoria == "b":
             print("Ganaste")
-            break
+            contador += 1
+            ganadasmias += 1
         else:
             print("Perdiste")
-            break
+            contador += 1
+            ganadasmaquina += 1
 
+       
+
+        
+        if contador == oportunidades: 
+            if ganadasmias > ganadasmaquina: 
+                print(f"Haz ganado el juego con un total de {ganadasmias} a {ganadasmaquina}")
+                break
+            elif ganadasmias == ganadasmaquina: 
+                print(f"Juego empatado")
+                break
+            else:
+                print(f"Haz perdido el juego con un total de {ganadasmaquina} a {ganadasmias}")
+                break
+           
+        
+      
         
 
 
